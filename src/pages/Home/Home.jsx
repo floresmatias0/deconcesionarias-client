@@ -47,7 +47,9 @@ const Home = ({
             <Col xs="12" className="text-center">
                 <Row>
                     {vehicleLoading ? (
-                        <Spinner animation="border" variant="light"/>
+                        <Col xs="12" className="d-flex justify-content-center">
+                            <Spinner animation="border" variant="light"/>
+                        </Col>
                     ) : (
                         vehicles && vehicles.length > 0 ? (
                             map(vehicles, (current,idx) => (
