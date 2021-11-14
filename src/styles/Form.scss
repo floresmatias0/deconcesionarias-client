@@ -1,12 +1,17 @@
 .form {
     border-radius: 0.5em;
-    width: 320px;
     padding: 1em 0;
-    background-color: #f7f7f7;
+    width: 600px;
+    background-color: #FB6624;
     border: solid 1px rgba(0,0,0,.125);
 
+    h4 {
+        color: #fff;
+    }
+
     input {
-        border-radius: 0.5em;
+        border-radius: 0.3em;
+        border: 0.5px solid ;
         outline: none;
         width: 80%;
         &::placeholder {
@@ -14,12 +19,21 @@
         }
     }
 
-    button {
+    .btn-orange {
         padding: 3px 12px !important;
+        background-color: #000 !important;
+        font-weight: 400;
+        outline: none !important;
+        border: none;
+        &:hover {
+            background-color: #fff  !important;
+            color: #000;
+            transition: all 0.3s ease-in-out;
+        }
     }
 }
 .error {
-    color: #ca0505;
-    font-weight: 600;
-    margin: 0;
+    color: #fff;
+    font-weight: 400;
+    margin: 5px;
 }

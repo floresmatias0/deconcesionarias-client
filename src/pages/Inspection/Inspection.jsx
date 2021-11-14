@@ -28,7 +28,7 @@ const Inspection = ({
     return (
         <Row>
             <Col>
-                <h1 className="text-center">Inspeccion de propiedades</h1>
+                <h1 className="subtitle text-center">Inspeccion de propiedades</h1>
                 <MenuTab 
                     items={vehicle}
                     tabs={categories}    

@@ -22,7 +22,7 @@ const initialState = {
     },
     vehicleFields: [
         {
-            label: 'Marca',
+            label: 'Nuevo vehiculo',
             placeholder: 'Mustang',
             type: 'text',
             name: 'name'

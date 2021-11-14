@@ -24,22 +24,22 @@ const MenuTab = ({items,tabs}) => {
       <>
         {items && categories && categories.length > 0 && (
           <Col xs="10" className="p-0 mx-auto">
-            <h1 className="text-center">{items.name}</h1>
+            <h2 className="subtitle text-center">{items.name}</h2>
             <Tabs
               defaultActiveKey="1"
               id="uncontrolled-tab-example"
-              className="tabs mb-3"
+              className="tabs"
             >
               {tabs && tabs.length > 0 && (
                 map(tabs, (pointer,key) => (
-                  <Tab key={key} eventKey={key+1} title={upperCase(pointer.name)}>
+                  <Tab className="tab-body py-3" key={key} eventKey={key+1} title={upperCase(pointer.name)}>
                     {map(filter(items.property,{ 'categoryId': key+1 }), (current,idx) => (
                         <Row key={idx} className="text-center">
-                          <Col xs="12" sm="6" className="p-0">
+                          <Col xs="12" sm="6" className="p-0 my-2">
                               <Card.Text>{current.name}</Card.Text>
                           </Col>
                           {map(items.values.filter(val => val.propertyId === current.id), (point,i) => (
-                            <Col xs="12" sm="6" className="p-0" key={i}>
+                            <Col xs="12" sm="6" className="p-0 my-2" key={i}>
                               <Rating 
                                 propertyId={point.propertyId}
                                 valueId={point.id}

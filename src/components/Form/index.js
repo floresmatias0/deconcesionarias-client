@@ -33,39 +33,44 @@ const FormComponent = ({
                     >
                     {({ errors,touched }) => (
                         <Form className="form d-flex flex-column justify-content-center mx-auto">
-                            {map(fields, (field, idx) => (
-                                <div key={idx}>
-                                    <Col xs="12">
-                                        <h4>{get(field, 'label')}</h4>
-                                    </Col>
-                                    <Col xs="12">
-                                        <Field
-                                            placeholder={get(field, 'placeholder')}
-                                            type={get(field, 'type')}
-                                            name={get(field, 'name')}
-                                        />
-                                        {errors[get(field, 'name')] && touched[get(field, 'name')] && <p className="error animate__animated animate__shakeX">{errors[get(field, 'name')]}</p>}
-                                    </Col>
-                                </div>
-                            ))}
                             <Col xs="12">
-                                {goBack && (
-                                    <Button
-                                        variant="danger"
-                                        className="btn-cancel m-2"
-                                        onClick={goBack}
-                                    >
-                                        {CANCEL}
-                                    </Button>
-                                )}
-                                {' '}
-                                <Button
-                                    type="submit"
-                                    className="m-2"
-                                    variant="success"
-                                >
-                                    {SEND}
-                                </Button>
+                                {map(fields, (field, idx) => (
+                                    <Row key={idx}>
+                                        <Col xs="12">
+                                            <h4 className="mb-3">{get(field, 'label')}</h4>
+                                        </Col>
+                                        <Col xs="9" className="d-flex align-items-center justify-content-center">
+                                            <Field
+                                                autocomplete="off"
+                                                placeholder={get(field, 'placeholder')}
+                                                type={get(field, 'type')}
+                                                name={get(field, 'name')}
+                                            />
+                                        </Col>
+                                        <Col xs="3" className="d-flex justify-content-start">
+                                            {goBack && (
+                                                <Button
+                                                    variant="danger"
+                                                    className="btn-cancel m-2"
+                                                    onClick={goBack}
+                                                >
+                                                    {CANCEL}
+                                                </Button>
+                                            )}
+                                            {' '}
+                                            <Button
+                                                type="submit"
+                                                className="btn-orange"
+                                                variant="success"
+                                            >
+                                                {SEND}
+                                            </Button>
+                                        </Col>
+                                        <Col xs="12">
+                                            {errors[get(field, 'name')] && touched[get(field, 'name')] && <p className="error animate__animated animate__shakeX">{errors[get(field, 'name')]}</p>}
+                                        </Col>
+                                    </Row>
+                                ))}
                             </Col>
                         </Form>
                     )}

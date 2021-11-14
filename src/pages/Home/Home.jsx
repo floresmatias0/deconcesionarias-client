@@ -7,6 +7,7 @@ import {ERROR_NAME} from '../../utils/constans';
 import { createVehiclesProperty,fetchAllVehicles, deleteVehicleById } from '../../core/vehicle/vehicle.actions';
 import CardComponent from '../../components/Card';
 import map from 'lodash/map';
+import "../../styles/Home.scss";
 
 const validate = (values) => {
     let errors = {}
@@ -30,8 +31,7 @@ const Home = ({
 
     return (
         <Row>
-            <Col xs="12" className="mb-3 text-center">
-                <h2>Crea un auto</h2>
+            <Col xs="12" className="my-3 text-center">
                 <FormComponent
                     form={vehicleForm}
                     fields={vehicleFields}
@@ -40,7 +40,6 @@ const Home = ({
                 />
             </Col>
             <Col xs="12" className="text-center">
-                <h3>Coleccion de autos</h3>
                 <Row>
                     {vehicles && vehicles.length > 0 ? (
                         map(vehicles, (current,idx) => (
@@ -54,7 +53,7 @@ const Home = ({
                             </Col>
                         ))
                         ) : (
-                            <h2>No hay ningun auto agregado</h2>
+                            <h2 className="subtitle">No hay ningun vehiculo agregado</h2>
                         )
                     }
                 </Row>
