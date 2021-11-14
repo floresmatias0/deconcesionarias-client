@@ -41,7 +41,7 @@ const FormComponent = ({
                                         </Col>
                                         <Col xs="12" sm="9" className="d-flex align-items-center justify-content-center">
                                             <Field
-                                                autocomplete="off"
+                                                autoComplete="off"
                                                 placeholder={get(field, 'placeholder')}
                                                 type={get(field, 'type')}
                                                 name={get(field, 'name')}

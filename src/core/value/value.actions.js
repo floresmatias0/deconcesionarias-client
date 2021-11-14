@@ -23,8 +23,6 @@ export const createValueProperty =  ({value,propertyId}) =>{
 }
 
 export const updateValueProperty =  ({valueId,value}) =>{
-    console.log(valueId)
-    console.log(value)
     return async () =>{
         await Api.put(VALUE, {valueId,value})
     }
