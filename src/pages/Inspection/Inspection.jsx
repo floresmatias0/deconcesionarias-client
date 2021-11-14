@@ -1,7 +1,7 @@
 import React, {useEffect} from 'react';
 import { useParams } from 'react-router-dom';
 import { connect } from 'react-redux';
-import { Col,Row }  from 'react-bootstrap';
+import { Col,Row,Spinner }  from 'react-bootstrap';
 import MenuTab from '../../components/Tabs';
 import {fetchAllVehicles,cleanVehiclesRequest} from '../../core/vehicle/vehicle.actions';
 import {fechtAllCategories} from '../../core/category/category.actions';
@@ -11,7 +11,8 @@ const Inspection = ({
     vehicle,
     cleanVehiclesRequest,
     categories,
-    fechtAllCategories
+    fechtAllCategories,
+    vehicleLoading
 }) => {
     const params = useParams();
 
@@ -29,10 +30,14 @@ const Inspection = ({
         <Row>
             <Col>
                 <h1 className="subtitle text-center">Inspeccion de propiedades</h1>
-                <MenuTab 
-                    items={vehicle}
-                    tabs={categories}    
-                />
+                {vehicleLoading ? (
+                    <Spinner animation="border" variant="light"/>
+                ) : (
+                    <MenuTab 
+                        items={vehicle}
+                        tabs={categories}    
+                    />
+                )}
             </Col>
         </Row>
     )
@@ -41,7 +46,8 @@ const Inspection = ({
 const mapStateToProps = (state) => {
     return {
         vehicle: state.vehicleReducer.vehicle,
-        categories: state.categoryReducer.category
+        categories: state.categoryReducer.category,
+        vehicleLoading: state.vehicleReducer.vehicleLoading
     }
 }
 
