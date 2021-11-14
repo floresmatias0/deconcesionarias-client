@@ -1,4 +1,4 @@
-export const API = 'http://localhost:3001'
+export const API = 'https://deconcesionarias-server.herokuapp.com'
 export const HOME = '/';
 export const VALUE = 'value';
 export const PROPERTY = 'property';
