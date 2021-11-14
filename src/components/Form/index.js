@@ -39,7 +39,7 @@ const FormComponent = ({
                                         <Col xs="12">
                                             <h4 className="mb-3">{get(field, 'label')}</h4>
                                         </Col>
-                                        <Col xs="9" className="d-flex align-items-center justify-content-center">
+                                        <Col xs="12" sm="9" className="d-flex align-items-center justify-content-center">
                                             <Field
                                                 autocomplete="off"
                                                 placeholder={get(field, 'placeholder')}
@@ -47,7 +47,7 @@ const FormComponent = ({
                                                 name={get(field, 'name')}
                                             />
                                         </Col>
-                                        <Col xs="3" className="d-flex justify-content-start">
+                                        <Col xs="12" sm="3" className="col-btn-form d-flex justify-content-start">
                                             {goBack && (
                                                 <Button
                                                     variant="danger"
