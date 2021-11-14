@@ -28,17 +28,21 @@ const Inspection = ({
 
     return (
         <Row>
-            <Col xs="12" className="d-flex flex-column justify-content-center">
+            <Col>
                 <h1 className="subtitle text-center">Inspeccion de propiedades</h1>
-                {vehicleLoading ? (
-                    <Spinner animation="border" variant="light"/>
-                ) : (
-                    <MenuTab 
-                        items={vehicle}
-                        tabs={categories}    
-                    />
-                )}
             </Col>
+                {vehicleLoading ? (
+                    <Col xs="12" className="d-flex justify-content-center">
+                        <Spinner animation="border" variant="light"/>
+                    </Col>
+                ) : (
+                    <Col xs="12">
+                        <MenuTab 
+                            items={vehicle}
+                            tabs={categories}    
+                        />
+                    </Col>
+                )}
         </Row>
     )
 }
