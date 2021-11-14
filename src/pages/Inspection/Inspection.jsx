@@ -28,7 +28,7 @@ const Inspection = ({
 
     return (
         <Row>
-            <Col className="d-flex justify-content-center">
+            <Col xs="12" className="d-flex justify-content-center">
                 <h1 className="subtitle text-center">Inspeccion de propiedades</h1>
                 {vehicleLoading ? (
                     <Spinner animation="border" variant="light"/>
