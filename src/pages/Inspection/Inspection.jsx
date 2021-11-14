@@ -31,7 +31,7 @@ const Inspection = ({
             <Col>
                 <h1 className="subtitle text-center">Inspeccion de propiedades</h1>
                 {vehicleLoading ? (
-                    <Spinner animation="border" variant="light" className="text-center"/>
+                    <Spinner animation="border" variant="light" className="mx-auto"/>
                 ) : (
                     <MenuTab 
                         items={vehicle}
