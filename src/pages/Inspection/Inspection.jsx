@@ -28,10 +28,10 @@ const Inspection = ({
 
     return (
         <Row>
-            <Col>
+            <Col className="d-flex justify-content-center">
                 <h1 className="subtitle text-center">Inspeccion de propiedades</h1>
                 {vehicleLoading ? (
-                    <Spinner animation="border" variant="light" className="mx-auto"/>
+                    <Spinner animation="border" variant="light"/>
                 ) : (
                     <MenuTab 
                         items={vehicle}
